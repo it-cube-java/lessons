@@ -1,16 +1,23 @@
+package movement1;
+
 import javax.swing.*;
 import java.awt.*;
+import java.util.Random;
 
-public class ButtonCraft extends JFrame {
+public class ButtonCraftWithRandom extends JFrame{
 
-    public ButtonCraft() throws InterruptedException {
+    public ButtonCraftWithRandom() throws InterruptedException {
         setTitle("Buttong Craft");
         JButton button = new JButton(" ");
         JPanel panel = new JPanel();
 
         panel.setLayout(null);
         button.setLayout(null);
-        button.setBounds(100,100, 200,200);
+
+        Random random = new Random();
+        int x = random.nextInt(600);
+        int y = random.nextInt(400);
+        button.setBounds(x,y, 200,200);
         button.setBackground(Color.BLUE);
 
         panel.add(button);
@@ -25,6 +32,6 @@ public class ButtonCraft extends JFrame {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        new ButtonCraft();
+        new ButtonCraftWithRandom();
     }
 }
